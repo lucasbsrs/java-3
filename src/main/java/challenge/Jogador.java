@@ -1,11 +1,37 @@
 package challenge;
 
+import java.util.Date;
+
+import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvDate;
+
 public class Jogador {
 
+	@CsvBindByName(column = "nationality")
 	private String nacionalidade;
+
+	@CsvBindByName(column = "club")
 	private String clube;
+
+	@CsvBindByName(column = "full_name")
 	private String nomeCompleto;
-	private Double valorRecisao;
+
+	@CsvBindByName(column = "eur_release_clause")
+	private Double eurRelease;
+
+	@CsvBindByName(column = "eur_wage")
+	private Double eurWage;
+
+	@CsvBindByName(column = "birth_date")
+	@CsvDate("yyyy-MM-dd")
+	private Date birthDate;
+
+	@CsvBindByName(column = "age")
+	private Integer age;
+
+	public Jogador() {
+
+	}
 
 	public String getNacionalidade() {
 		return nacionalidade;
@@ -31,12 +57,36 @@ public class Jogador {
 		this.nomeCompleto = nomeCompleto;
 	}
 
-	public Double getValorRecisao() {
-		return valorRecisao;
+	public Double getEurRelease() {
+		return eurRelease;
 	}
 
 	public void setValorRecisao(Double valorRecisao) {
-		this.valorRecisao = valorRecisao;
+		this.eurRelease = valorRecisao;
 	}
-	
+
+	public Double getEurWage() {
+		return eurWage;
+	}
+
+	public void setEurWage(Double eurWage) {
+		this.eurWage = eurWage;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
 }
